@@ -12,6 +12,8 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var chatCountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     var data: Person?
     
@@ -20,6 +22,8 @@ class ProfileViewController: UIViewController {
         
         nameLabel.text = data?.name
         imageView.image = UIImage(named: (data?.imageString)!)
+        chatCountLabel.text = "チャット回数：\(data?.messages.count)"
+        dateLabel.text = "\(data?.messages.last?.date!)"
         
     }
 }
