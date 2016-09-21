@@ -81,12 +81,9 @@ class ChatViewController: JSQMessagesViewController,UIImagePickerControllerDeleg
     // ユーザアイコン　タップ
     func tappedAvatar() {
         print("tapped user avatar")
-        //        let targetViewController = self.storyboard!.instantiateViewControllerWithIdentifier( "DoctorProfileViewController" ) as! DoctorProfileViewController
-        //        targetViewController.rootViewController = rootViewController
-        //        targetViewController.doctorData = self.doctorDatas[indexPath.row]
-        
-        //        rootViewController?.navigationController?.setNavigationBarHidden(false, animated: false)
-        //rootViewController?.navigationController?.pushViewController(targetViewController, animated: true)
+        let profileViewController = self.storyboard!.instantiateViewControllerWithIdentifier( "ProfileViewController" ) as! ProfileViewController
+        profileViewController.data = self.data
+        self.navigationController?.pushViewController(profileViewController, animated: true)
     }
     
     // コメント数
