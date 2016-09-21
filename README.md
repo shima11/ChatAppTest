@@ -1,2 +1,2 @@
-# PageMenuTest
-UICollectionViewをPageMenuで切り替えて表示
+# ChatAppTest
+Chatアプリのテスト
