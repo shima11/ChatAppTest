@@ -3,4 +3,5 @@ use_frameworks!
 
 target ’ChatAppTest’ do
   pod 'PageMenu'
+  pod 'JSQMessagesViewController'
 end

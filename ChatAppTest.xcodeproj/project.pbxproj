@@ -15,6 +15,11 @@
 		D4038AE81D92797A008511CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4038AE61D92797A008511CD /* LaunchScreen.storyboard */; };
 		D4038AF31D92797A008511CD /* ChatAppTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038AF21D92797A008511CD /* ChatAppTestTests.swift */; };
 		D4038AFE1D92797A008511CD /* ChatAppTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038AFD1D92797A008511CD /* ChatAppTestUITests.swift */; };
+		D4038B0C1D928B36008511CD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038B0B1D928B36008511CD /* ChatViewController.swift */; };
+		D49B34571D92CBA600F90ED0 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B34561D92CBA600F90ED0 /* Chat.swift */; };
+		D49B34591D92E6A200F90ED0 /* person2.png in Resources */ = {isa = PBXBuildFile; fileRef = D49B34581D92E6A200F90ED0 /* person2.png */; };
+		D4B6DA4C1D92B7D700C14E1A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6DA4B1D92B7D700C14E1A /* Person.swift */; };
+		D4B6DA4F1D92BE0100C14E1A /* person1.png in Resources */ = {isa = PBXBuildFile; fileRef = D4B6DA4E1D92BE0100C14E1A /* person1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		D4038AF91D92797A008511CD /* ChatAppTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4038AFD1D92797A008511CD /* ChatAppTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppTestUITests.swift; sourceTree = "<group>"; };
 		D4038AFF1D92797A008511CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4038B0B1D928B36008511CD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D49B34561D92CBA600F90ED0 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		D49B34581D92E6A200F90ED0 /* person2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person2.png; path = resouce/person2.png; sourceTree = "<group>"; };
+		D4B6DA4B1D92B7D700C14E1A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D4B6DA4E1D92BE0100C14E1A /* person1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person1.png; path = resouce/person1.png; sourceTree = "<group>"; };
 		DF3D10684B2A841C6BE21E74 /* Pods_ChatAppTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatAppTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA69B218AB98B0739D38CB32 /* Pods-ChatAppTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatAppTest/Pods-ChatAppTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,11 +132,15 @@
 			isa = PBXGroup;
 			children = (
 				D4038ADD1D92797A008511CD /* AppDelegate.swift */,
+				D4B6DA4B1D92B7D700C14E1A /* Person.swift */,
+				D49B34561D92CBA600F90ED0 /* Chat.swift */,
 				D4038ADF1D92797A008511CD /* ViewController.swift */,
+				D4038B0B1D928B36008511CD /* ChatViewController.swift */,
 				D4038AE11D92797A008511CD /* Main.storyboard */,
 				D4038AE41D92797A008511CD /* Assets.xcassets */,
 				D4038AE61D92797A008511CD /* LaunchScreen.storyboard */,
 				D4038AE91D92797A008511CD /* Info.plist */,
+				D4B6DA4D1D92BDF800C14E1A /* resouce */,
 			);
 			path = ChatAppTest;
 			sourceTree = "<group>";
@@ -147,6 +161,15 @@
 				D4038AFF1D92797A008511CD /* Info.plist */,
 			);
 			path = ChatAppTestUITests;
+			sourceTree = "<group>";
+		};
+		D4B6DA4D1D92BDF800C14E1A /* resouce */ = {
+			isa = PBXGroup;
+			children = (
+				D4B6DA4E1D92BE0100C14E1A /* person1.png */,
+				D49B34581D92E6A200F90ED0 /* person2.png */,
+			);
+			name = resouce;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +279,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49B34591D92E6A200F90ED0 /* person2.png in Resources */,
+				D4B6DA4F1D92BE0100C14E1A /* person1.png in Resources */,
 				D4038AE81D92797A008511CD /* LaunchScreen.storyboard in Resources */,
 				D4038AE51D92797A008511CD /* Assets.xcassets in Resources */,
 				D4038AE31D92797A008511CD /* Main.storyboard in Resources */,
@@ -331,8 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B6DA4C1D92B7D700C14E1A /* Person.swift in Sources */,
 				D4038AE01D92797A008511CD /* ViewController.swift in Sources */,
 				D4038ADE1D92797A008511CD /* AppDelegate.swift in Sources */,
+				D49B34571D92CBA600F90ED0 /* Chat.swift in Sources */,
+				D4038B0C1D928B36008511CD /* ChatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,10 +505,13 @@
 			baseConfigurationReference = 358A1D64511E4974E5D7E6BF /* Pods-ChatAppTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChatAppTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shimaApps.ChatAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -489,10 +520,13 @@
 			baseConfigurationReference = EA69B218AB98B0739D38CB32 /* Pods-ChatAppTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChatAppTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shimaApps.ChatAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

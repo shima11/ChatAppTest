@@ -1,12 +1,18 @@
 PODS:
+  - JSQMessagesViewController (7.2.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - PageMenu (1.2.9)
 
 DEPENDENCIES:
+  - JSQMessagesViewController
   - PageMenu
 
 SPEC CHECKSUMS:
+  JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
 
-PODFILE CHECKSUM: c61028337556c32a6ca6c0eac6ab1b527e8a9fcc
+PODFILE CHECKSUM: 43e833543d3f3eb04d90d2ae4c05afae01c1baa6
 
 COCOAPODS: 1.0.1
