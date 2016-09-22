@@ -16,7 +16,6 @@
 		D4038AF31D92797A008511CD /* ChatAppTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038AF21D92797A008511CD /* ChatAppTestTests.swift */; };
 		D4038AFE1D92797A008511CD /* ChatAppTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038AFD1D92797A008511CD /* ChatAppTestUITests.swift */; };
 		D4038B0C1D928B36008511CD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038B0B1D928B36008511CD /* ChatViewController.swift */; };
-		D49B34571D92CBA600F90ED0 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B34561D92CBA600F90ED0 /* Chat.swift */; };
 		D49B34591D92E6A200F90ED0 /* person2.png in Resources */ = {isa = PBXBuildFile; fileRef = D49B34581D92E6A200F90ED0 /* person2.png */; };
 		D49B345B1D92FB5E00F90ED0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B345A1D92FB5E00F90ED0 /* ProfileViewController.swift */; };
 		D4B6DA4C1D92B7D700C14E1A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6DA4B1D92B7D700C14E1A /* Person.swift */; };
@@ -56,7 +55,6 @@
 		D4038AFD1D92797A008511CD /* ChatAppTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppTestUITests.swift; sourceTree = "<group>"; };
 		D4038AFF1D92797A008511CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4038B0B1D928B36008511CD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		D49B34561D92CBA600F90ED0 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		D49B34581D92E6A200F90ED0 /* person2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person2.png; path = resouce/person2.png; sourceTree = "<group>"; };
 		D49B345A1D92FB5E00F90ED0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4B6DA4B1D92B7D700C14E1A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 			children = (
 				D4038ADD1D92797A008511CD /* AppDelegate.swift */,
 				D4B6DA4B1D92B7D700C14E1A /* Person.swift */,
-				D49B34561D92CBA600F90ED0 /* Chat.swift */,
 				D4038ADF1D92797A008511CD /* ViewController.swift */,
 				D4038B0B1D928B36008511CD /* ChatViewController.swift */,
 				D49B345A1D92FB5E00F90ED0 /* ProfileViewController.swift */,
@@ -363,7 +360,6 @@
 				D4B6DA4C1D92B7D700C14E1A /* Person.swift in Sources */,
 				D4038AE01D92797A008511CD /* ViewController.swift in Sources */,
 				D4038ADE1D92797A008511CD /* AppDelegate.swift in Sources */,
-				D49B34571D92CBA600F90ED0 /* Chat.swift in Sources */,
 				D4038B0C1D928B36008511CD /* ChatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
