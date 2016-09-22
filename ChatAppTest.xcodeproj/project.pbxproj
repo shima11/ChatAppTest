@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		287B88268914A5778200BBE6 /* Pods_ChatAppTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3D10684B2A841C6BE21E74 /* Pods_ChatAppTest.framework */; };
 		D4038ADE1D92797A008511CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038ADD1D92797A008511CD /* AppDelegate.swift */; };
 		D4038AE01D92797A008511CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038ADF1D92797A008511CD /* ViewController.swift */; };
 		D4038AE31D92797A008511CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4038AE11D92797A008511CD /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		D4038AF31D92797A008511CD /* ChatAppTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038AF21D92797A008511CD /* ChatAppTestTests.swift */; };
 		D4038AFE1D92797A008511CD /* ChatAppTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038AFD1D92797A008511CD /* ChatAppTestUITests.swift */; };
 		D4038B0C1D928B36008511CD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4038B0B1D928B36008511CD /* ChatViewController.swift */; };
+		D47B3C341D943B9600735B55 /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47B3C331D943B9600735B55 /* PersonData.swift */; };
 		D49B34591D92E6A200F90ED0 /* person2.png in Resources */ = {isa = PBXBuildFile; fileRef = D49B34581D92E6A200F90ED0 /* person2.png */; };
 		D49B345B1D92FB5E00F90ED0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49B345A1D92FB5E00F90ED0 /* ProfileViewController.swift */; };
 		D4B6DA4C1D92B7D700C14E1A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6DA4B1D92B7D700C14E1A /* Person.swift */; };
@@ -55,6 +55,9 @@
 		D4038AFD1D92797A008511CD /* ChatAppTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppTestUITests.swift; sourceTree = "<group>"; };
 		D4038AFF1D92797A008511CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4038B0B1D928B36008511CD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D433978D1D945E8800161123 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		D433978E1D945E8800161123 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		D47B3C331D943B9600735B55 /* PersonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		D49B34581D92E6A200F90ED0 /* person2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person2.png; path = resouce/person2.png; sourceTree = "<group>"; };
 		D49B345A1D92FB5E00F90ED0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4B6DA4B1D92B7D700C14E1A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				287B88268914A5778200BBE6 /* Pods_ChatAppTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +103,8 @@
 		998B3FB5847DA44E90A51675 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D433978D1D945E8800161123 /* Realm.framework */,
+				D433978E1D945E8800161123 /* RealmSwift.framework */,
 				DF3D10684B2A841C6BE21E74 /* Pods_ChatAppTest.framework */,
 			);
 			name = Frameworks;
@@ -133,6 +137,7 @@
 			children = (
 				D4038ADD1D92797A008511CD /* AppDelegate.swift */,
 				D4B6DA4B1D92B7D700C14E1A /* Person.swift */,
+				D47B3C331D943B9600735B55 /* PersonData.swift */,
 				D4038ADF1D92797A008511CD /* ViewController.swift */,
 				D4038B0B1D928B36008511CD /* ChatViewController.swift */,
 				D49B345A1D92FB5E00F90ED0 /* ProfileViewController.swift */,
@@ -185,6 +190,7 @@
 				D4038AD81D92797A008511CD /* Resources */,
 				430E7105F898F0252B8CD29B /* [CP] Embed Pods Frameworks */,
 				6DDBA341DB24FD94F4D01C3C /* [CP] Copy Pods Resources */,
+				1964834A5A3B52677A876D38 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +310,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1964834A5A3B52677A876D38 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatAppTest/Pods-ChatAppTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3E84883AEEC45D13F80D538C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47B3C341D943B9600735B55 /* PersonData.swift in Sources */,
 				D49B345B1D92FB5E00F90ED0 /* ProfileViewController.swift in Sources */,
 				D4B6DA4C1D92B7D700C14E1A /* Person.swift in Sources */,
 				D4038AE01D92797A008511CD /* ViewController.swift in Sources */,
@@ -507,6 +529,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChatAppTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shimaApps.ChatAppTest;
@@ -522,6 +548,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ChatAppTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shimaApps.ChatAppTest;

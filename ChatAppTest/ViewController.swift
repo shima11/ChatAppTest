@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -28,6 +29,18 @@ class ViewController: UIViewController {
         let message = JSQMessage(senderId: "satoshi",  displayName: "satoshi", text: "こんにちは!")
         person.messages.append(message)
         persons.append(person)
+        
+        
+        // 通常のSwiftのオブジェクトと同じように扱えます
+        let hoge = PersonData()
+        hoge.name = "takashi"
+        hoge.imageString = "person"
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(hoge)
+        }
+
         
         self.tableView.reloadData()
         
