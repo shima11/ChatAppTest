@@ -14,72 +14,65 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var persons:[Person] = []
+    var persons:[PersonData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         self.tableView.backgroundColor = UIColor.lightGrayColor()
-        
-        // test data
-        var person = Person(name: "satoshi", imageString: "person2", messages: []) // チャット相手
-        let message = JSQMessage(senderId: "satoshi",  displayName: "satoshi", text: "こんにちは!")
-        person.messages.append(message)
-        persons.append(person)
-        
-        
-        // 通常のSwiftのオブジェクトと同じように扱えます
-        let hoge = PersonData()
-        hoge.name = "takashi"
-        hoge.imageString = "person"
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(hoge)
-        }
-
-        
-        self.tableView.reloadData()
-        
     }
     
     override func viewDidLayoutSubviews() {
         // UIView Layout init
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        print("viewwilldissapear")
-    }
     override func viewWillAppear(animated: Bool) {
         if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
             // cell selectedを解除
             self.tableView.deselectRowAtIndexPath(indexPathForSelectedRow, animated: true)
         }
     }
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.persons = PersonData.loadAll()
+        self.tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func addUserAction(sender: AnyObject) {
-        var person = Person(name: "hiro", imageString: "person2", messages: []) // チャット相手
-        let message = JSQMessage(senderId: "hiro",  displayName: "hiro", text: "hello my name is hiro")
-        person.messages.append(message)
-        persons.append(person)
-        
+        self.addUserData()
         self.tableView.reloadData()
     }
+    
+    
+    func addUserData(){
+        let message = JSQMessage(senderId: "satoshi",  displayName: "satoshi", text: "こんにちは!")
+        
+        let chat = MessageData()
+        chat.message = NSKeyedArchiver.archivedDataWithRootObject(message)
+        
+        let person = PersonData(value: ["name": "satoshi", "imageString": "person1"])
+        person.messages.append(chat)
+        person.id = PersonData.lastId()
+        
+        person.save()
+        
+        self.persons.append(person)
+    }
+    
+//    func getData() {
+//        self.persons = PersonData.loadAll()
+//    }
 
 }
 
 extension ViewController: UITableViewDelegate {
-//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-//        print("selected")
-//    }
+
 }
 
 extension ViewController: UITableViewDataSource {
@@ -90,16 +83,17 @@ extension ViewController: UITableViewDataSource {
         //let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let cell = UITableViewCell.init(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         cell.textLabel?.text = persons[indexPath.row].name
-        let lastChat = persons[indexPath.row].messages.last
-        cell.detailTextLabel?.text = lastChat?.text
+        // 最後のチャットを表示
+        let messageData = persons[indexPath.row].messages
+        let lastMessage = NSKeyedUnarchiver.unarchiveObjectWithData((messageData.last?.message)!) as! JSQMessage
+        cell.detailTextLabel?.text = lastMessage.text
         cell.imageView?.image = UIImage(named: persons[indexPath.row].imageString)
-        
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("selected:\(indexPath.row)")
+        //画面遷移
         let chatViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatViewController") as! ChatViewController
-        chatViewController.data = persons[indexPath.row]
+        chatViewController.person = self.persons[indexPath.row]
         self.navigationController?.pushViewController(chatViewController, animated: true)
     }
 }

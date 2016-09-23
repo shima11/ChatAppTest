@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JSQMessagesViewController
 
 class ProfileViewController: UIViewController {
 
@@ -15,15 +16,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var chatCountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var data: Person?
+    var person: PersonData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = data?.name
-        imageView.image = UIImage(named: (data?.imageString)!)
-        chatCountLabel.text = "チャット回数：\(data?.messages.count)"
-        dateLabel.text = "\(data?.messages.last?.date!)"
+        nameLabel.text = person?.name
+        imageView.image = UIImage(named: (person?.imageString)!)
+        chatCountLabel.text = "チャット回数：\(person?.messages.count)"
+        let lastMessage = NSKeyedUnarchiver.unarchiveObjectWithData((person?.messages.last?.message)!) as! JSQMessage
+        dateLabel.text = "\(lastMessage.date)"
         
     }
 }

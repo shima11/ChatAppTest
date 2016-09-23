@@ -7,13 +7,54 @@
 //
 
 import Foundation
-import JSQMessagesViewController
 import RealmSwift
 
 class PersonData: Object {
+    static let realm = try! Realm()
+    
+    dynamic var id = 0
     dynamic var name: String = ""
     dynamic var imageString: String = ""
-    //dynamic var messages: [JSQMessage] = [] // チャット内容の配列
+    let messages = List<MessageData>()
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    // id auto increment
+    static func lastId() -> Int {
+        if let user = realm.objects(PersonData).last {
+            return user.id + 1
+        } else {
+            return 1
+        }
+    }
+    
+    // get all data
+    static func loadAll() -> [PersonData] {
+        let users = realm.objects(PersonData).sorted("id", ascending: false)
+        var ret: [PersonData] = []
+        for user in users {
+            ret.append(user)
+        }
+        return ret
+    }
+    
+    // addのみ
+    func save() {
+        try! PersonData.realm.write {
+            PersonData.realm.add(self)
+        }
+    }
+    // update クロージャ内でプロパティを書き換える
+    func update(method: (() -> Void)) {
+        try! PersonData.realm.write {
+            method()
+        }
+    }
 }
 
+class MessageData: Object {
+    let person = LinkingObjects(fromType: PersonData.self, property: "messages") // バックリンク
+    dynamic var message: NSData? // JSQMessageのアーカイブデータ
+}
