@@ -22,7 +22,7 @@ class ChatViewController: JSQMessagesViewController,UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title =  person.name
+        self.title =  self.person.name
         self.collectionView.backgroundColor = UIColor.whiteColor()
         
         // 必須
@@ -30,7 +30,7 @@ class ChatViewController: JSQMessagesViewController,UIImagePickerControllerDeleg
         self.senderId = myId // 自分の名前
         
         //ユーザアイコンを設定（avatar1:相手、avatar2:自分）
-        let avatar1 = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: person.imageString)!, diameter: 128)
+        let avatar1 = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: self.person.imageString)!, diameter: 128)
         let avatar2 =  JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "person1")!, diameter: 64)
         userAvatar.append(avatar1)
         userAvatar.append(avatar2)
@@ -40,7 +40,7 @@ class ChatViewController: JSQMessagesViewController,UIImagePickerControllerDeleg
         self.view.addGestureRecognizer(tap)
         
         // メッセージをアンアーカイブしてJSQMessage配列に入れ直す
-        for data in person.messages {
+        for data in self.person.messages {
             messages.append(NSKeyedUnarchiver.unarchiveObjectWithData(data.message!)! as! JSQMessage)
         }
         

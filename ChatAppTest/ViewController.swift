@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         
         self.tableView.backgroundColor = UIColor.lightGrayColor()
+        self.tableView.separatorColor = UIColor.lightGrayColor()
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
         self.persons = PersonData.loadAll()
         self.tableView.reloadData()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -51,14 +53,14 @@ class ViewController: UIViewController {
     
     
     func addUserData(){
+        // デモのユーザデータの追加
         let message = JSQMessage(senderId: "satoshi",  displayName: "satoshi", text: "こんにちは!")
-        
         let chat = MessageData()
         chat.message = NSKeyedArchiver.archivedDataWithRootObject(message)
         
         let person = PersonData(value: ["name": "satoshi", "imageString": "person1"])
         person.messages.append(chat)
-        person.id = PersonData.lastId()
+        //person.id = PersonData.lastId()
         
         person.save()
         
@@ -72,7 +74,21 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate {
-
+    // cell edit 許可
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    // cell edit button tapped
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            // realmのデータを削除
+            self.persons[indexPath.row].deleteData()
+            // データの削除
+            self.persons.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)            
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {

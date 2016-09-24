@@ -12,7 +12,7 @@ import RealmSwift
 class PersonData: Object {
     static let realm = try! Realm()
     
-    dynamic var id = 0
+    dynamic var id: String = NSUUID().UUIDString
     dynamic var name: String = ""
     dynamic var imageString: String = ""
     let messages = List<MessageData>()
@@ -22,13 +22,13 @@ class PersonData: Object {
     }
     
     // id auto increment
-    static func lastId() -> Int {
-        if let user = realm.objects(PersonData).last {
-            return user.id + 1
-        } else {
-            return 1
-        }
-    }
+//    static func lastId() -> Int {
+//        if let user = realm.objects(PersonData).last {
+//            return user.id + 1
+//        } else {
+//            return 1
+//        }
+//    }
     
     // get all data
     static func loadAll() -> [PersonData] {
@@ -50,6 +50,13 @@ class PersonData: Object {
     func update(method: (() -> Void)) {
         try! PersonData.realm.write {
             method()
+        }
+    }
+    
+    // delete
+    func deleteData() {
+        try! PersonData.realm.write {
+            PersonData.realm.delete(self)
         }
     }
 }
